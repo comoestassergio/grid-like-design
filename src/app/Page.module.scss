@@ -1,0 +1,242 @@
+$media-phone: 900px;
+
+.main {
+    height: 100svh;
+    padding: 1rem;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+}
+
+%link {
+    text-transform: uppercase;
+    font-size: min(3vw, 3rem);
+    text-align: left;
+    padding: .5rem;
+
+    border: 4px solid #000;
+    border-radius: .75rem;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    background-size: 300%;
+    background-position: 70% 60%;
+
+    transition: background-position ease-out 300ms, 
+    font-size ease-out 300ms,
+    color ease-out 300ms;
+
+    filter: saturate(170%);
+
+    &:hover {
+        background-position: 100%;
+        cursor: pointer;
+        font-size: min(3.2vw, 3.2rem);
+        color: white;
+    }
+}
+
+.link {
+    &__one {
+        @extend %link;
+
+        grid-column: 4;
+
+        background-image: linear-gradient(
+            140deg,
+            hsl(270deg 27% 94%) 18%,
+            hsl(17deg 50% 92%) 57%,
+            hsl(27deg 77% 89%) 69%,
+            hsl(30deg 91% 86%) 75%,
+            hsl(32deg 97% 83%) 79%,
+            hsl(34deg 100% 79%) 82%,
+            hsl(35deg 100% 75%) 84%,
+            hsl(37deg 100% 71%) 87%,
+            hsl(38deg 100% 67%) 91%,
+            hsl(39deg 100% 63%) 100%
+        );
+
+        @media only screen and (max-width: $media-phone) {
+            grid-column: 1 / span 2;
+            font-size: min(5vw, 5rem);
+
+            &:hover {
+                font-size: min(6vw, 6rem);
+            }
+        }
+    }
+
+    &__two {
+        @extend %link;
+        grid-column: 4;
+        grid-row: 2;
+
+        background-image: linear-gradient(
+            140deg,
+            hsl(270deg 27% 94%) 18%,
+            hsl(327deg 34% 89%) 55%,
+            hsl(337deg 41% 84%) 67%,
+            hsl(340deg 45% 79%) 74%,
+            hsl(341deg 46% 74%) 78%,
+            hsl(342deg 47% 69%) 81%,
+            hsl(342deg 47% 63%) 83%,
+            hsl(341deg 46% 58%) 85%,
+            hsl(340deg 46% 52%) 88%,
+            hsl(338deg 55% 45%) 92%,
+            hsl(333deg 82% 37%) 100%
+        );
+
+        @media only screen and (max-width: $media-phone) {
+            grid-column: 3 / span 2;
+            grid-row: 1;
+
+            font-size: min(5vw, 5rem);
+
+            &:hover {
+                font-size: min(6vw, 6rem);
+            }
+        }
+
+    }
+
+    &__three {
+        @extend %link;
+        grid-column: 1;
+        grid-row: 3;
+
+        background-image: linear-gradient(
+            140deg,
+            hsl(270deg 27% 94%) 18%,
+            hsl(240deg 5% 86%) 55%,
+            hsl(174deg 3% 77%) 67%,
+            hsl(146deg 5% 68%) 74%,
+            hsl(137deg 6% 60%) 78%,
+            hsl(133deg 6% 52%) 81%,
+            hsl(130deg 8% 45%) 83%,
+            hsl(129deg 11% 37%) 85%,
+            hsl(129deg 16% 30%) 88%,
+            hsl(130deg 24% 23%) 92%,
+            hsl(132deg 38% 16%) 100%
+        );
+
+        @media only screen and (max-width: $media-phone) {
+            grid-column: 1 / span 2;
+            grid-row: 4;
+
+            font-size: min(5vw, 5rem);
+
+            &:hover {
+                font-size: min(6vw, 6rem);
+            }
+        }
+
+    }
+
+    &__four {
+        @extend %link;
+        grid-column: 1;
+        grid-row: 4;
+
+        background-image: linear-gradient(
+            140deg,
+            hsl(270deg 27% 94%) 18%,
+            hsl(235deg 29% 90%) 55%,
+            hsl(225deg 33% 84%) 67%,
+            hsl(220deg 35% 79%) 74%,
+            hsl(218deg 37% 74%) 78%,
+            hsl(216deg 38% 68%) 81%,
+            hsl(214deg 39% 63%) 83%,
+            hsl(212deg 40% 57%) 85%,
+            hsl(210deg 41% 51%) 88%,
+            hsl(207deg 53% 45%) 92%,
+            hsl(201deg 100% 33%) 100%
+        );
+
+        @media only screen and (max-width: $media-phone) {
+            grid-column: 3 / span 2;
+            grid-row: 4;
+
+            font-size: min(5vw, 5rem);
+
+            &:hover {
+                font-size: min(6vw, 6rem);
+            }
+        }
+
+    }
+}
+
+.title {
+    @extend %link;
+    grid-column: 2 / span 3;
+    grid-row: 3 / span 2;
+
+    &:hover {
+        font-size: min(5vw, 5rem);
+        color: black;
+    }
+
+    &__main {
+        text-align: right;
+
+        font-size: min(5vw, 6rem);
+        font-family: 'Neutral Face';
+
+        @media only screen and (max-width: $media-phone) {
+            font-size: min(7vw, 7rem);
+        }
+    }
+
+    &__secondary {
+        align-self: flex-start;
+        justify-self: flex-start;
+
+        font-size: min(2.5vw, 1rem);
+
+        max-width: 40%;
+
+        opacity: .6;
+        font-family: 'Neutral Face';
+    }
+
+    @media only screen and (max-width: $media-phone) {
+        grid-column: 1 / span 4;
+        grid-row: 3 / span 1;
+    }
+}
+
+.image {
+    background-image: url('../../public/pic.jpg');
+    background-size: cover;
+
+    border-radius: .5rem;
+
+    grid-row: span 2;
+    grid-column: 3 / span 2;
+
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+
+    font-size: min(12vw, 12rem);
+
+    align-self: center;
+    justify-self: center;
+
+    font-family: 'Neutral Face Bold';
+
+    @media only screen and (max-width: $media-phone) {
+        grid-column: 1 / span 4;
+        grid-row: 2 / span 1;
+    }
+}
