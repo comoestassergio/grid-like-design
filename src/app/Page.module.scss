@@ -177,9 +177,29 @@ $media-phone: 900px;
     grid-column: 2 / span 3;
     grid-row: 3 / span 2;
 
+    background-image: linear-gradient(
+        140deg,
+        hsl(270deg 27% 94%) 18%,
+        hsl(270deg 8% 84%) 55%,
+        hsl(270deg 4% 73%) 67%,
+        hsl(270deg 3% 63%) 74%,
+        hsl(270deg 2% 54%) 78%,
+        hsl(270deg 2% 44%) 81%,
+        hsl(270deg 1% 35%) 83%,
+        hsl(270deg 1% 26%) 85%,
+        hsl(270deg 1% 18%) 88%,
+        hsl(270deg 1% 10%) 92%,
+        hsl(0deg 0% 0%) 100%
+    );
+
+    background-position: 10% 50%;
+
     &:hover {
         font-size: min(5vw, 5rem);
-        color: black;
+
+        .title__secondary {
+            opacity: 0;
+        }
     }
 
     &__main {
@@ -203,6 +223,8 @@ $media-phone: 900px;
 
         opacity: .6;
         font-family: 'Neutral Face';
+
+        transition: opacity 300ms ease-out;
     }
 
     @media only screen and (max-width: $media-phone) {
